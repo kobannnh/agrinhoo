@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conexão Campo-Cidade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Bem-vindo ao Projeto Agrinho</h1>
+  <p>Vamos explorar a conexão entre o campo e a cidade!</p>
+  <img src="img/dog.jpg" alt="">
+  <div>
+    <a href="info.html" class="botao">Jornada dos Alimentos</a>
+    <a href="quizz.html" class="botao">Quizz</a>
+  </div>
+  <footer style="text-align: center; padding: 15px; background-color: #f0f0f0; margin-top: 50px; font-size: 14px; color: #555;">
+  © Alle Rechte vorbehalten von Schüler Juan Pepe Castro.
+</footer>
+ <img 
+    src="img/Schweiz.jpg" 
+    alt="Bandeira da Suíça" 
+    id="imgSuica"
+    style="width:40px; height:auto; cursor:pointer; border-radius:5px; margin-right:1250px;"
+  />
+  <audio id="somSuica" src="img/Appenzeller Jodler.mp3"></audio>
+<div id="telaCheia">
+    <img id="imagemOverlay" src="img/KuhsagtKommindieStadt.png" alt="Imagem em tela cheia">
+  </div>
+  
+  <script>
+    const imagem = document.getElementById('imgSuica');
+    const som = document.getElementById('somSuica');
+    const telaCheia = document.getElementById('telaCheia');
+
+    imagem.addEventListener('click', () => {
+      som.currentTime = 0;
+      som.play();
+      telaCheia.style.display = 'flex';
+      setTimeout(() => {
+        telaCheia.style.display = 'none';
+      }, 10000);
+    });
+  </script>
+</body>
+</html>
