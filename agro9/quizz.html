@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quizz - Projeto Agrinho</title>
+  <link rel="stylesheet" href="style++/Schweiz.css" />
+</head>
+<body>
+
+<a href="inicio.html" class="voltar">Voltar</a>
+
+<h1>Quizz - A Jornada dos Alimentos</h1>
+<div class="quiz-container">
+  <div id="question" class="question"></div>
+  <div id="options" class="options"></div>
+  <button id="nextBtn" style="margin-top: 20px; padding: 10px 20px; font-size: 18px; display:none;">Próxima</button>
+  <div id="score" class="score"></div>
+</div>
+<script>
+  const quiz = [
+    {
+      question: "De onde começam os alimentos na jornada até nossa mesa?",
+      options: ["Nas feiras", "No campo", "No supermercado", "No transporte"],
+      answer: 1
+    },
+    {
+      question: "Quem é Dona Cida no Projeto Agrinho?",
+      options: ["Uma professora", "Uma política", "Uma comerciante", "Uma agricultora sustentável"],
+      answer: 3
+    },
+    {
+      question: "Qual dessas práticas é sustentável?",
+      options: ["Descartar lixo no rio", "Queimar restos de alimentos", "Reaproveitar água da chuva", "Usar sacolas plásticas descartáveis"],
+      answer: 2
+    },
+    {
+      question: "O que Dona Cida ensina às crianças da escola local?",
+      options: ["Como plantar e cuidar do campo", "Como usar agrotóxicos", "Como vender na feira", "Como transportar alimentos"],
+      answer: 0
+    },
+    {
+      question: "Qual é uma dica para reduzir emissão de gases pelo transporte?",
+      options: ["Comprar produtos locais", "Comprar tudo de longe", "Usar caminhões maiores", "Plantar árvores na cidade"],
+      answer: 0
+    }
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+
+  const questionEl = document.getElementById('question');
+  const optionsEl = document.getElementById('options');
+  const nextBtn = document.getElementById('nextBtn');
+  const scoreEl = document.getElementById('score');
+
+    function showQuestion() {
+    scoreEl.textContent = '';
+    nextBtn.style.display = 'none';
+
+    const q = quiz[currentQuestion];
+    questionEl.textContent = q.question;
+    optionsEl.innerHTML = '';
+
+    q.options.forEach((option, index) => {
+      const button = document.createElement('button');
+      button.textContent = option;
+      button.onclick = () => selectOption(index);
+      optionsEl.appendChild(button);
+    });
+  }
+  <script/>
